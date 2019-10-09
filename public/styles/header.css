@@ -1,0 +1,27 @@
+.header {
+  height: 400px;
+  width: 100%;
+  position: relative;
+  background-color: #d9e5f7;
+  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+  padding: 1em 0em 2em 0em;
+}
+/* #header{
+  display: block;
+  width: 1000px;
+  margin: 0 auto;
+} */
+.headerImg {
+  text-align: center;
+}
+
+.headerText {
+  text-align: center;
+}
+
+/* .profilePic {
+  border-style: solid;
+  border-radius: 50%;
+  border-color: #4056A1;
+} */
+

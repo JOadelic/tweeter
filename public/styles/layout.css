@@ -23,3 +23,33 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+ .nav {
+  
+  position: inherit;
+  height: 120px;
+  width: 100%;
+  z-index: 10000;
+  background-color: #4056A1;
+  padding: 1.5em;
+  font-family: "Bungee", sans-serif;
+  color: #FFFFFF;
+  font-size: 150%
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+}
+
+.profileFirstName {
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+
+.profileLastName {
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+}

@@ -28,9 +28,22 @@ const data = [
   }
 ]
 
+$(document).ready(function() {
+
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
 
 const $createTweetElement = function (tweetData) {
-  
+  let datetime = tweetData.created_at; // anything
+  let date = new Date(datetime);
+  let options = {
+        year: 'numeric', month: 'numeric', day: 'numeric',
+    };
+
+  let result = date.toLocaleDateString('en', options);
     
     return `<article class="tweetBox tweetBox1">
         <header>
@@ -42,14 +55,15 @@ const $createTweetElement = function (tweetData) {
           
          </header>
          <body>
-           <div>${tweetData.content.text}</div>
+           <div>${escape(tweetData.content.text)}</div>
          </body>
         <footer>
-          <div class="date">10 days ago</div>
+          <div class="date">${result}</div>
          <div class="icons"> ❤️</div>
       
          </footer>
         </article>`
+        
   }
 
 const renderTweets = function(data) {
@@ -58,44 +72,63 @@ const renderTweets = function(data) {
   // takes return value and appends it to the tweets container
   for (let tweet of data) {
    let htmlTweet = $createTweetElement(tweet);
-   $('.container').append(htmlTweet);
+   $('.tweetContainer').prepend(htmlTweet);
   }
 }
-// console.log(renderTweets(data));
-// console.log($createTweetElement(data))
 
+// submits new tweet form to server
 
-// console.log(inputData);
-$(function() {
-  const $button = $('.button1');
   
   $('form').submit(function (e) {
     e.preventDefault();
+    
     // console.log($( this ).serialize());
     // console.log('text input value: ',$(".textInput").val());
     let textInput = $(".textInput").val();
+    let characters = textInput.length;
     let data = $(this).serialize();
-    
-    $.ajax("/tweets/", { method: 'POST' , data})
+
+    if(textInput === "") {
+      
+      $(".emptyTweet").slideToggle("slow", "linear");
+      return;
+      
+    } else if (characters > 140) {
+      $(".tooLongTweet").slideToggle("slow", "linear");
+    }
+    $.ajax("/tweets/", { method: 'POST', data})
     .then(function () {
-      console.log('Success, tweet posted!: ', textInput);
-        
+      $loadTweets();
+      $('.textInput').val('');
+    }) 
+  });
+
+
+
+const $loadTweets = function() {
+  const getTweets = $('.article'); 
+    $('.tweetContainer').empty();
+    $.ajax('/tweets', { method: 'GET' })
+    .then(function (data) {
+      // $('.container').load("/tweets/");
+      renderTweets(data);
       
     });
-  });
+};
+$loadTweets()
+//renderTweets(data)
+ 
+
+
+
+// tweet dropdown
+$(".birdieButton").click((e) => {
+  e.preventDefault()
+  console.log('button is working');
+  // alert('button is working');
+  $(".textInput").slideToggle("slow", "linear");
 });
 
-// example BELOW
-// $(function() {
-//   const $button = $('#load-more-posts');
-//   $button.on('click', function () {
-//     console.log('Button clicked, performing ajax call...');
-//     $.ajax('more-posts.html', { method: 'GET' })
-//     .then(function (morePostsHtml) {
-//       console.log('Success: ', morePostsHtml);
-//       $button.replaceWith(morePostsHtml);
-//     });
-//   });
-// });
-
-
+//error disapear
+$()
+}); 

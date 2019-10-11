@@ -3,6 +3,7 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
 html {
   box-sizing: border-box;
 }
@@ -18,9 +19,9 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  /* display: flex;
+  display: flex;
   flex-flow: row wrap;
-  align-items: flex-start; */
+  align-items: flex-start; 
 }
 
 .main {
@@ -41,6 +42,7 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   height: 10rem;
   width: 100%;
+  padding: .2em;
   /* animation: gradientBG 15s ease infinite; */
 }
 
@@ -75,12 +77,11 @@ body {
 }
 
 .tweeterLogo {
- /* display: flex; */
- /* justify-content: space-between; */
+ justify-content: baseline;
+ align-items: top;
  font-family: 'bungee';
- font-size: 100px;
- padding: 1rem;
- 
+ font-size: 4rem;
+ padding: .5em;
 
 }
 
@@ -88,13 +89,6 @@ body {
   width: 90%;
   margin: 2rem;
 }
-
-
- /* .profileFirstName {
-  font-weight: bold;
-  display: flex;
-  justify-content: center;
-} */
 
 .profileLastName {
   display: flex;
@@ -124,26 +118,22 @@ body {
   justify-content: space-between;
   align-items: column;
   width: 100%;
+  
 }
 
-@media (max-width: 961px) {
- body {
-   width: 961px;
- }
 
+
+/* on tablet styles */
+@media (max-width: 768px) { 
  .nav {
    width: 100%;
    margin: 0;
  }
 
- .header {
-   justify-content: center;
-   margin-top: 1em;
- }
+ 
 
  .contentLayout {
    flex-direction: column;
-   /* justify-content: center; */
    align-items: center;
    width: 100%;
  }
@@ -151,6 +141,8 @@ body {
  .icons {
    align-content: column;
  }
+
+
 
 
 }

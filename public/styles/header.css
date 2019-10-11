@@ -1,21 +1,15 @@
 .header {
-  height: 15%;
-  position: relative;
+  height: 3%;
+  /* position: relative; */
   background:#23a6d559 !important;
   background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  border-radius: .5rem;
   width: 100%;
-}
+  margin: 1em;
+  
 
-.header:hover {
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.8);
-  background-color:linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  
-  
 }
 
 .headerText {
@@ -23,25 +17,33 @@
   justify-content: space-around;
   color: white;
   font-size: 2.5em;
-  padding-bottom: .5em;
+  /* padding-bottom: .5em; */
+  width: 100%;
+  background-color: pink;
+  b\
 }
 
 .profilePic {
   justify-content: center;
   align-content: center; 
   width: 50%;
-  /* size: 60%; */
-  /* padding-right: 22%;
-  padding-left: 22%; */
+  height: 0%;
 
 }
 
 
 
-@media (min-width: 961) {
-  .header {
-   width: 100%;
-   margin-top: 1.5em;
-   margin-right: 1em;
- }
+@media (max-width: 768px) {
+
+ .headerText {
+  display: none;
+  color: black;
+}
+.header {
+  margin: 0;
+  height: 5%;
+  border-radius: 0;
+}
+
+
 }

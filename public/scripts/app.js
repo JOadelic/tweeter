@@ -59,7 +59,7 @@ const $createTweetElement = function (tweetData) {
          </body>
         <footer>
           <div class="date">${result}</div>
-         <div class="icons"> ❤️</div>
+          <i class="fas fa-heart heartIcon"></i>
       
          </footer>
         </article>`
@@ -76,31 +76,29 @@ const renderTweets = function(data) {
   }
 }
 
-// submits new tweet form to server
-
-  
-  $('form').submit(function (e) {
+// submits new tweet form to server if conditions are met
+ $('form').submit(function (e) {
     e.preventDefault();
     
-    // console.log($( this ).serialize());
-    // console.log('text input value: ',$(".textInput").val());
     let textInput = $(".textInput").val();
     let characters = textInput.length;
     let data = $(this).serialize();
 
     if(textInput === "") {
       
-      $(".emptyTweet").slideToggle("slow", "linear");
-      return;
-      
+      $(".emptyTweet").slideDown("slow", "linear");
+        return;
     } else if (characters > 140) {
-      $(".tooLongTweet").slideToggle("slow", "linear");
-    }
-    $.ajax("/tweets/", { method: 'POST', data})
-    .then(function () {
-      $loadTweets();
-      $('.textInput').val('');
-    }) 
+        $(".tooLongTweet").slideDown("slow", "linear");
+      } else {
+        $.ajax("/tweets/", { method: 'POST', data})
+          .then(function () {
+          $('.counter').text(140);
+          $loadTweets();
+          $('.tooLongTweet').slideUp("slow", "linear");
+          $('.textInput').val('');
+        }) 
+      }
   });
 
 
@@ -110,11 +108,9 @@ const $loadTweets = function() {
     $('.tweetContainer').empty();
     $.ajax('/tweets', { method: 'GET' })
     .then(function (data) {
-      // $('.container').load("/tweets/");
       renderTweets(data);
-      
     });
-};
+  };
 $loadTweets()
 //renderTweets(data)
  
@@ -122,13 +118,8 @@ $loadTweets()
 
 
 // tweet dropdown
-$(".birdieButton").click((e) => {
-  e.preventDefault()
-  console.log('button is working');
-  // alert('button is working');
-  $(".textInput").slideToggle("slow", "linear");
-});
-
-//error disapear
-$()
+ $(".birdieButton").click((e) => {
+   e.preventDefault();
+   $(".textInput").slideToggle("slow", "linear");
+ });
 }); 

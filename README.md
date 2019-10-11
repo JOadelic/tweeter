@@ -21,4 +21,4 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 ## UI
-(https://github.com/JOadelic/tweeter/blob/master/docs/tweeterDisplay.png?raw=true)
+!["Screenshot of UI](https://github.com/JOadelic/tweeter/blob/master/docs/tweeterDisplay.png?raw=true)

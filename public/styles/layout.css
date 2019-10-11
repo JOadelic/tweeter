@@ -18,8 +18,9 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
-  display: flex;
+  /* display: flex;
   flex-flow: row wrap;
+  align-items: flex-start; */
 }
 
 .main {
@@ -33,18 +34,18 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%;
+  width: 100vw;
   z-index: 10000;
-  padding: 1em;
   color: #FFFFFF;
   font-size: 200%;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  /* background: white; */
+  height: 10rem;
+  width: 100%;
   /* animation: gradientBG 15s ease infinite; */
 }
 
 .birdieButton {
-  /* font-family: Arial, Helvetica, sans-serif; */
+  align-items: center;
   float: right;
   border-radius: 50%;
   outline: none;
@@ -57,8 +58,9 @@ body {
 
 .icons {
   padding: .1em;
-  justify-content: center;
-  margin-top: .5em;
+  align-items: center;
+  margin-top: .9em;
+  /* padding-top: 3rem; */
   
 }
 
@@ -69,34 +71,36 @@ body {
  font-family: 'source sans pro';
  justify-content: space-around;
  align-content: center;
+ color: white;
 }
 
 .tweeterLogo {
  /* display: flex; */
- justify-content: space-between;
+ /* justify-content: space-between; */
  font-family: 'bungee';
  font-size: 100px;
+ padding: 1rem;
  
 
 }
 
 .container {
-  /* width: 90%; */
-  margin: 0 auto;
-
+  width: 90%;
+  margin: 2rem;
 }
 
-.profileFirstName {
+
+ /* .profileFirstName {
   font-weight: bold;
   display: flex;
   justify-content: center;
-}
+} */
 
 .profileLastName {
   display: flex;
   justify-content: center;
   font-weight: 100;
-}
+} 
 
 @keyframes bounce {
     1% {
@@ -115,3 +119,38 @@ body {
 
 }
 
+.contentLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: column;
+  width: 100%;
+}
+
+@media (max-width: 961px) {
+ body {
+   width: 961px;
+ }
+
+ .nav {
+   width: 100%;
+   margin: 0;
+ }
+
+ .header {
+   justify-content: center;
+   margin-top: 1em;
+ }
+
+ .contentLayout {
+   flex-direction: column;
+   /* justify-content: center; */
+   align-items: center;
+   width: 100%;
+ }
+
+ .icons {
+   align-content: column;
+ }
+
+
+}

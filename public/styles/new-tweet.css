@@ -6,7 +6,7 @@
   border: none;
   font-size: 30px;
   color:white;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
@@ -30,8 +30,8 @@
 
 .newTweet {
   position: top;
-  
 }
+
 .textInput {
   background-color: transparent;
   width: 100%;

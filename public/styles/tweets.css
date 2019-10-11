@@ -1,6 +1,3 @@
-
-
-
 .tweetBox {
   border: solid;
   margin: 1.5em 0em 0em 0em;
@@ -37,7 +34,6 @@
   display: flex;
   float: left;
 }
-
 
 .nameAndPic {
   display: flex;
@@ -81,8 +77,6 @@
 .heartIcon {
   visibility: hidden;
 }
-
-
 
 @media (max-width: 768px) {
   .heartIcon {

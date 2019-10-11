@@ -62,8 +62,6 @@ body {
   padding: .1em;
   align-items: center;
   margin-top: .9em;
-  /* padding-top: 3rem; */
-  
 }
 
 .gotTweets {
@@ -82,7 +80,6 @@ body {
  font-family: 'bungee';
  font-size: 4rem;
  padding: .5em;
-
 }
 
 .container {
@@ -99,7 +96,6 @@ body {
 @keyframes bounce {
     1% {
     transform: translateY(0px) scale(1,.9);
-    
   }
   15% {
     transform: translateY(-10px);
@@ -110,7 +106,6 @@ body {
   1% {
     transform: translateY(0px) scale(1,.9);
   } 
-
 }
 
 .contentLayout {
@@ -118,7 +113,6 @@ body {
   justify-content: space-between;
   align-items: column;
   width: 100%;
-  
 }
 
 
@@ -130,8 +124,6 @@ body {
    margin: 0;
  }
 
- 
-
  .contentLayout {
    flex-direction: column;
    align-items: center;
@@ -141,8 +133,4 @@ body {
  .icons {
    align-content: column;
  }
-
-
-
-
 }

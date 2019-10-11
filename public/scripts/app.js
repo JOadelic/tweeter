@@ -26,15 +26,14 @@ const data = [
     },
     "created_at": 1461113959088
   }
-]
+];
 
 $(document).ready(function() {
-
   const escape =  function(str) {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
 const $createTweetElement = function (tweetData) {
   let datetime = tweetData.created_at; // anything
@@ -44,7 +43,6 @@ const $createTweetElement = function (tweetData) {
     };
 
   let result = date.toLocaleDateString('en', options);
-    
     return `<article class="tweetBox tweetBox1">
         <header>
           <div class="nameAndPic">
@@ -60,11 +58,9 @@ const $createTweetElement = function (tweetData) {
         <footer>
           <div class="date">${result}</div>
           <i class="fas fa-heart heartIcon"></i>
-      
-         </footer>
+        </footer>
         </article>`
-        
-  }
+}
 
 const renderTweets = function(data) {
   // loops through tweets
@@ -74,7 +70,7 @@ const renderTweets = function(data) {
    let htmlTweet = $createTweetElement(tweet);
    $('.tweetContainer').prepend(htmlTweet);
   }
-}
+};
 
 // submits new tweet form to server if conditions are met
  $('form').submit(function (e) {
@@ -85,7 +81,6 @@ const renderTweets = function(data) {
     let data = $(this).serialize();
 
     if(textInput === "") {
-      
       $(".emptyTweet").slideDown("slow", "linear");
         return;
     } else if (characters > 140) {
@@ -111,13 +106,9 @@ const $loadTweets = function() {
       renderTweets(data);
     });
   };
-$loadTweets()
-//renderTweets(data)
- 
+$loadTweets();
 
-
-
-// tweet dropdown
+ // tweet dropdown
  $(".birdieButton").click((e) => {
    e.preventDefault();
    $(".textInput").slideToggle("slow", "linear");

@@ -1,15 +1,12 @@
 .header {
   height: 3%;
-  /* position: relative; */
-  background:#23a6d559 !important;
+  background:#23a6d559 !important; /* <=== I was desperate */
   background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
   align-items: center;
   display: flex;
   flex-direction: column;
   width: 100%;
   margin: 1em;
-  
-
 }
 
 .headerText {
@@ -17,10 +14,8 @@
   justify-content: space-around;
   color: white;
   font-size: 2.5em;
-  /* padding-bottom: .5em; */
   width: 100%;
   background-color: pink;
-  b\
 }
 
 .profilePic {
@@ -28,22 +23,16 @@
   align-content: center; 
   width: 50%;
   height: 0%;
-
 }
 
-
-
 @media (max-width: 768px) {
-
  .headerText {
   display: none;
   color: black;
-}
-.header {
+ }
+ .header {
   margin: 0;
   height: 5%;
   border-radius: 0;
-}
-
-
+ }
 }
